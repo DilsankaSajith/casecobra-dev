@@ -1,103 +1,120 @@
-import Image from "next/image";
+import MaxWidthWrapper from '@/components/MaxWidthWrapper';
+import Phone from '@/components/Phone';
+import { Check, Star } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="bg-slate-50">
+      <section>
+        <MaxWidthWrapper className="pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-24 xl:pt-32 lg:pb-52">
+          <div className="col-span-2 px-6 lg:px-0 lg:pt-4">
+            <div className="relative mx-auto text-center lg:text-left flex flex-col items-center lg:items-start">
+              <div className="absolute w-28 left-0 -top-20 hidden lg:block">
+                <img src="/snake-1.png" alt="snake image" className="w-full" />
+              </div>
+              <h1 className="relative w-fit tracking-tight text-balance mt-16 font-bold !leading-tight text-gray-900 text-5xl md:text-6xl lg:text-7xl">
+                Your Image on a{' '}
+                <span className="bg-green-600 px-2 text-white">Custom</span>{' '}
+                Phone Case
+              </h1>
+              <p className="mt-8 text-lg lg:pr-10 max-w-prose text-center lg:text-left text-balance md:text-wrap">
+                Capture your favorite memories with your own,{' '}
+                <span className="font-bold">one-of-one</span> phone case.
+                CaseCobra allows you to protect your memories, not just your
+                phone case.
+              </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+              <ul className="mt-8 space-y-2 text-left font-medium flex flex-col items-center sm:items-start">
+                <div className="space-y-2">
+                  <li className="flex gap-1.5 items-center text-left">
+                    <Check className="h-5 w-5 shrink-0 text-green-600" />
+                    High quality, durable material
+                  </li>
+                  <li className="flex gap-1.5 items-center text-left">
+                    <Check className="h-5 w-5 shrink-0 text-green-600" />5 year
+                    print guarantee
+                  </li>
+                  <li className="flex gap-1.5 items-center text-left">
+                    <Check className="h-5 w-5 shrink-0 text-green-600" />
+                    Modern iPhone model supported
+                  </li>
+                </div>
+              </ul>
+
+              <div className="mt-12 flex flex-col sm:flex-row items-center sm:items-start gap-5">
+                <div className="flex -space-x-4">
+                  <Image
+                    src="/users/user-1.png"
+                    className="inline-block w-10 h-10 rounded-full ring-2 ring-slate-100"
+                    width={10}
+                    height={10}
+                    alt="user image"
+                  />
+                  <Image
+                    src="/users/user-2.png"
+                    className="inline-block w-10 h-10 rounded-full ring-2 ring-slate-100"
+                    width={10}
+                    height={10}
+                    alt="user image"
+                  />
+                  <Image
+                    src="/users/user-3.png"
+                    className="inline-block w-10 h-10 rounded-full ring-2 ring-slate-100"
+                    width={10}
+                    height={10}
+                    alt="user image"
+                  />
+                  <Image
+                    src="/users/user-4.jpg"
+                    className="inline-block w-10 h-10 rounded-full ring-2 ring-slate-100"
+                    width={10}
+                    height={10}
+                    alt="user image"
+                  />
+                  <Image
+                    src="/users/user-5.jpg"
+                    className="inline-block w-10 h-10 rounded-full ring-2 ring-slate-100 object-cover"
+                    width={10}
+                    height={10}
+                    alt="user image"
+                  />
+                </div>
+
+                <div className="flex flex-col justify-between items-center sm:items-start">
+                  <div className="flex gap-0 5">
+                    <Star className="h-4 w-4 text-green-600 fill-green-600" />
+                    <Star className="h-4 w-4 text-green-600 fill-green-600" />
+                    <Star className="h-4 w-4 text-green-600 fill-green-600" />
+                    <Star className="h-4 w-4 text-green-600 fill-green-600" />
+                    <Star className="h-4 w-4 text-green-600 fill-green-600" />
+                  </div>
+
+                  <p>
+                    <span className="font-semibold">1,250</span> happy customers
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-span-full lg:col-span-1 w-full flex justify-center px-8 sm:px-16 md:px-0 mt-32 lg:mx-0 lg:mt-0 h-fit">
+            <div className="relative md:max-w-xl">
+              <img
+                src="/your-image.png"
+                className="absolute w-40 lg:w-52 left-56 -top-20 select-none hidden sm:block lg:hidden xl:block"
+                alt="your image"
+              />
+              <img
+                src="/line.png"
+                className="absolute w-20 -left-6 -bottom-6 select-none"
+                alt="line image"
+              />
+              <Phone className="w-64" imgSrc="/testimonials/1.jpg" />
+            </div>
+          </div>
+        </MaxWidthWrapper>
+      </section>
     </div>
   );
 }
