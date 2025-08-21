@@ -9,3 +9,12 @@ export function cn(...inputs: ClassValue[]) {
 
 export const { useUploadThing, uploadFiles } =
   generateReactHelpers<OurFileRouter>();
+
+export const formatPrice = (price: number) => {
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+
+  return formatter.format(price);
+};
