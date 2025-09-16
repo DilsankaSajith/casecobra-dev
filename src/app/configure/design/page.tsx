@@ -2,14 +2,14 @@ import { db } from '@/db';
 import { notFound } from 'next/navigation';
 import DesignConfigurator from './DesignConfigurator';
 
-interface PageProps {
-  searchParams: {
+interface DesignPageProps {
+  searchParams: Promise<{
     [key: string]: string | string[] | undefined;
-  };
+  }>;
 }
 
-const Page = async ({ searchParams }: PageProps) => {
-  const { id } = searchParams;
+const Page = async ({ searchParams }: DesignPageProps) => {
+  const { id } = await searchParams;
 
   if (!id || typeof id !== 'string') {
     return notFound();

@@ -1,42 +1,44 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { getAuthStatus } from './actions';
 import { useRouter } from 'next/navigation';
 import { Loader2 } from 'lucide-react';
 
 const Page = () => {
-  const [configId, setConfigId] = useState<string | null>(
-    localStorage.getItem('configurationId') || null
-  );
+  //   const [configId, setConfigId] = useState<string | null>(null);
   const router = useRouter();
 
-  console.log(configId);
-
-  useEffect(() => {
-    const configurationId = localStorage.getItem('configurationId');
-    if (configurationId) {
-      setConfigId(configurationId);
-    }
-  }, []);
-
-  const { data } = useQuery({
+  const { isSuccess } = useQuery({
     queryKey: ['auth-callback'],
     queryFn: async () => await getAuthStatus(),
     retry: true,
     retryDelay: 500,
   });
 
-  if (data?.success) {
-    if (configId) {
-      localStorage.removeItem('configurationId');
-      router.push(`/configure/preview?id=${configId}`);
-    } else {
-      console.log('No config id');
-      router.push('/');
+  useEffect(() => {
+    const configurationId = localStorage.getItem('configurationId');
+    if (isSuccess) {
+      if (configurationId) {
+        localStorage.removeItem('configurationId');
+        router.push(`/configure/preview?id=${configurationId}`);
+      } else {
+        console.log('No config id');
+        router.push('/');
+      }
     }
-  }
+  }, [isSuccess, router]);
+
+  //   if (data?.success) {
+  //     if (configId) {
+  //       localStorage.removeItem('configurationId');
+  //       router.push(`/configure/preview?id=${configId}`);
+  //     } else {
+  //       console.log('No config id');
+  //       router.push('/');
+  //     }
+  //   }
 
   return (
     <div className="w-full mt-24 flex justify-center">
