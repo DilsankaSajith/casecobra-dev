@@ -50,7 +50,7 @@ const DesignConfigurator = ({
     },
     onError: () => {
       toast.error('Something went wrong', {
-        description: 'There was an error on our end. Please try again',
+        description: 'There was an error on our end. Please try again.',
       });
     },
     onSuccess: () => {
