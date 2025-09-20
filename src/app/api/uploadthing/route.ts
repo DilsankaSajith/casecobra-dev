@@ -9,3 +9,6 @@ export const { GET, POST } = createRouteHandler({
   // Apply an (optional) custom config:
   // config: { ... },
 });
+
+// Prevent Next.js from trying to prerender this
+export const dynamic = 'force-dynamic';
